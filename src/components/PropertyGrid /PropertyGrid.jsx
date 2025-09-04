@@ -1,68 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropertyCard from '../PropertyCard/PropertyCard';
 import './PropertyGrid.css';
 
-const PropertyGrid = ({ properties, searchFilters }) => {
-  const [activeFilter, setActiveFilter] = useState('all');
-  const [filteredProperties, setFilteredProperties] = useState(properties);
-
-  // Aplicar filtros de búsqueda
-  React.useEffect(() => {
-    let result = properties;
-    
-    if (searchFilters.propertyType) {
-      result = result.filter(prop => 
-        prop.title.toLowerCase().includes(searchFilters.propertyType.toLowerCase()) ||
-        prop.type.toLowerCase() === searchFilters.propertyType.toLowerCase()
-      );
+const PropertyGrid = ({ properties, searchFilters = {} }) => {
+  // Filtrar propiedades basado en searchFilters
+  const filteredProperties = properties.filter(property => {
+    // Filtro por tipo de propiedad
+    if (searchFilters.propertyType && property.type !== searchFilters.propertyType) {
+      return false;
     }
     
-    if (searchFilters.location) {
-      result = result.filter(prop => 
-        prop.location.toLowerCase().includes(searchFilters.location.toLowerCase())
-      );
+    // Filtro por ubicación
+    if (searchFilters.location && !property.location.toLowerCase().includes(searchFilters.location.toLowerCase())) {
+      return false;
     }
     
-    if (searchFilters.bedrooms) {
-      result = result.filter(prop => 
-        prop.bedrooms >= parseInt(searchFilters.bedrooms)
-      );
+    // Filtro por dormitorios
+    if (searchFilters.bedrooms && property.bedrooms < parseInt(searchFilters.bedrooms)) {
+      return false;
     }
     
-    if (searchFilters.bathrooms) {
-      result = result.filter(prop => 
-        prop.bathrooms >= parseInt(searchFilters.bathrooms)
-      );
+    // Filtro por baños
+    if (searchFilters.bathrooms && property.bathrooms < parseInt(searchFilters.bathrooms)) {
+      return false;
     }
     
-    if (searchFilters.minPrice) {
-      result = result.filter(prop => {
-        const price = parseFloat(prop.price.replace(/[^0-9.]/g, ''));
-        return price >= parseInt(searchFilters.minPrice);
-      });
+    // Filtro por área mínima
+    if (searchFilters.minArea && property.area < parseInt(searchFilters.minArea)) {
+      return false;
     }
     
-    if (searchFilters.maxPrice) {
-      result = result.filter(prop => {
-        const price = parseFloat(prop.price.replace(/[^0-9.]/g, ''));
-        return price <= parseInt(searchFilters.maxPrice);
-      });
+    // Filtro por área máxima
+    if (searchFilters.maxArea && property.area > parseInt(searchFilters.maxArea)) {
+      return false;
     }
     
-    if (searchFilters.minArea) {
-      result = result.filter(prop => 
-        prop.area >= parseInt(searchFilters.minArea)
-      );
-    }
-    
-    if (searchFilters.maxArea) {
-      result = result.filter(prop => 
-        prop.area <= parseInt(searchFilters.maxArea)
-      );
-    }
-    
-    setFilteredProperties(result);
-  }, [searchFilters, properties]);
+    return true;
+  });
 
   return (
     <div className="property-grid-container">

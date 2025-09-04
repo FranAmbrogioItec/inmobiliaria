@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropertyGrid from '../../components/PropertyGrid/PropertyGrid';
+import PropertyGrid from '../../components/PropertyGrid/PropertyGrid'; // Esta ruta debe ser correcta
 import SearchFilters from '../../components/SearchFilters/SearchFilters';
 import { properties } from '../../data/properties';
 import './TemporaryRental.css';

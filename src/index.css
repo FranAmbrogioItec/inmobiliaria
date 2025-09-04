@@ -1,3 +1,6 @@
+/* Importar fuentes de Google - DEBE ESTAR AL PRINCIPIO */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 /* Variables de colores y fuentes */
 :root {
   --primary-dark: #0F172A;
@@ -16,9 +19,6 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --border-radius: 12px;
 }
-
-/* Importar fuentes de Google */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 /* Reset y estilos base */
 * {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ currentPage, setCurrentPage }) => {
@@ -26,7 +27,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className="header-logo">
+        <Link to="/" className="header-logo" onClick={() => handleNavClick('home')}>
           <img 
             src="/echenique_circle.png" 
             alt="Logo Echenique" 
@@ -36,51 +37,51 @@ const Header = ({ currentPage, setCurrentPage }) => {
             <h2>ECHENIQUE</h2>
             <span>Soluciones Inmobiliarias</span>
           </div>
-        </div>
+        </Link>
         
         <nav className={`header-nav ${isMenuOpen ? 'active' : ''}`}>
-          <a 
-            href="#home" 
+          <Link 
+            to="/" 
             className={`nav-item ${currentPage === 'home' ? 'active' : ''}`}
             onClick={() => handleNavClick('home')}
           >
             Inicio
-          </a>
-          <a 
-            href="#about" 
+          </Link>
+          <Link 
+            to="/about" 
             className={`nav-item ${currentPage === 'about' ? 'active' : ''}`}
             onClick={() => handleNavClick('about')}
           >
             Nosotros
-          </a>
-          <a 
-            href="#sale" 
+          </Link>
+          <Link 
+            to="/sale" 
             className={`nav-item ${currentPage === 'sale' ? 'active' : ''}`}
             onClick={() => handleNavClick('sale')}
           >
             Venta
-          </a>
-          <a 
-            href="#rental" 
+          </Link>
+          <Link 
+            to="/rental" 
             className={`nav-item ${currentPage === 'rental' ? 'active' : ''}`}
             onClick={() => handleNavClick('rental')}
           >
             Alquiler
-          </a>
-          <a 
-            href="#temporal" 
+          </Link>
+          <Link 
+            to="/temporal" 
             className={`nav-item ${currentPage === 'temporal' ? 'active' : ''}`}
             onClick={() => handleNavClick('temporal')}
           >
             Temporal
-          </a>
-          <a 
-            href="#contact" 
+          </Link>
+          <Link 
+            to="/contact" 
             className={`nav-item ${currentPage === 'contact' ? 'active' : ''}`}
             onClick={() => handleNavClick('contact')}
           >
             Contacto
-          </a>
+          </Link>
         </nav>
         
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>

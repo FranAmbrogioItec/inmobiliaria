@@ -1,71 +1,123 @@
-import React, { useState, useEffect } from 'react';
+.footer {
+  background-color: var(--primary-dark);
+  color: white;
+  padding: 60px 0 30px;
+}
 
-const Header = ({ currentPage, setCurrentPage }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
 
-  const handleNavClick = (page) => {
-    setCurrentPage(page);
-    setIsMenuOpen(false);
-  };
+.footer-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 10px;
+}
 
-  return (
-    <header className="navbar">
-      <div className="nav-container">
-        <div className="nav-logo">
-          <img 
-            src="./public/echenique_circle.png" 
-            alt="Logo Echenique" 
-            className="nav-logo-image"
-          />
-          <div className="nav-logo-text">
-            <h2>ECHENIQUE</h2>
-            <span>Soluciones Inmobiliarias</span>
-          </div>
-        </div>
-        
-        <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <a 
-            href="#home" 
-            className={`nav-item ${currentPage === 'home' ? 'active' : ''}`}
-            onClick={() => handleNavClick('home')}
-          >
-            Inicio
-          </a>
-          <a 
-            href="#properties" 
-            className={`nav-item ${currentPage === 'properties' ? 'active' : ''}`}
-            onClick={() => handleNavClick('properties')}
-          >
-            Propiedades
-          </a>
-          <a 
-            href="#about" 
-            className={`nav-item ${currentPage === 'about' ? 'active' : ''}`}
-            onClick={() => handleNavClick('about')}
-          >
-            Nosotros
-          </a>
-          <a 
-            href="#contact" 
-            className={`nav-item ${currentPage === 'contact' ? 'active' : ''}`}
-            onClick={() => handleNavClick('contact')}
-          >
-            Contacto
-          </a>
-        </nav>
-        
-        <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
-      </div>
-    </header>
-  );
-};
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent);
+}
 
-export default Header;
+.footer-logo span {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-section a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.footer-social a:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.footer-map {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .footer-section h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

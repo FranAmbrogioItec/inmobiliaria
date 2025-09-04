@@ -1,5 +1,6 @@
-// Hero.jsx
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Hero.css';
 
 const Hero = ({ setCurrentPage, onSearch }) => {
   const heroRef = useRef(null);
@@ -9,6 +10,7 @@ const Hero = ({ setCurrentPage, onSearch }) => {
     location: '',
     operationType: ''
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,19 +41,21 @@ const Hero = ({ setCurrentPage, onSearch }) => {
     
     if (hasFilters && onSearch) {
       onSearch(searchFilters);
-      document.getElementById('properties').scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-      setCurrentPage('properties');
+      
+      // Redirigir a la página correspondiente según el tipo de operación
+      if (searchFilters.operationType === 'venta') {
+        navigate('/sale');
+      } else if (searchFilters.operationType === 'alquiler') {
+        navigate('/rental');
+      } else if (searchFilters.operationType === 'temporal') {
+        navigate('/temporal');
+      } else {
+        navigate('/sale');
+      }
     } else if (onSearch) {
-      // Si no hay filtros, mostrar todas las propiedades
+      // Si no hay filtros, mostrar todas las propiedades de venta
       onSearch({});
-      document.getElementById('properties').scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-      setCurrentPage('properties');
+      navigate('/sale');
     }
   };
 
@@ -63,12 +67,12 @@ const Hero = ({ setCurrentPage, onSearch }) => {
   };
 
   const scrollToProperties = () => {
-    document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
-    setCurrentPage('properties');
+    navigate('/sale');
+    setCurrentPage('sale');
   };
 
   const scrollToContact = () => {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    navigate('/contact');
     setCurrentPage('contact');
   };
 
@@ -138,6 +142,7 @@ const Hero = ({ setCurrentPage, onSearch }) => {
                     <option value="">Tipo de operación</option>
                     <option value="venta">Venta</option>
                     <option value="alquiler">Alquiler</option>
+                    <option value="temporal">Alquiler Temporal</option>
                   </select>
                 </div>
 

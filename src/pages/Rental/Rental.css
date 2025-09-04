@@ -1,16 +1,4 @@
-import React from 'react';
-import Hero from '../components/Hero';
-import PropertyGrid from '../components/PropertyGrid';
-import About from '../components/About';
-
-const Home = () => {
-  return (
-    <div className="home">
-      <Hero />
-      <PropertyGrid />
-      <About />
-    </div>
-  );
-};
-
-export default Home;
+.rental-page {
+  background-color: var(--background-light);
+  min-height: 100vh;
+}

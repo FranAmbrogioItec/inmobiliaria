@@ -1,16 +1,148 @@
-import React from 'react';
-import Hero from '../components/Hero';
-import PropertyGrid from '../components/PropertyGrid';
-import About from '../components/About';
+.about-page {
+  background-color: white;
+}
 
-const Home = () => {
-  return (
-    <div className="home">
-      <Hero />
-      <PropertyGrid />
-      <About />
-    </div>
-  );
-};
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 80px;
+}
 
-export default Home;
+.about-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.value-item {
+  background: var(--background-light);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.value-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+}
+
+.value-item p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: var(--shadow-xl);
+}
+
+.team-section {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  color: var(--primary-dark);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.team-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.team-member {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.member-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 4px solid var(--background-light);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.member-role {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.member-description {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,16 +1,30 @@
-import React from 'react';
-import Hero from '../components/Hero';
-import PropertyGrid from '../components/PropertyGrid';
-import About from '../components/About';
+import React, { useState } from 'react';
+import PropertyGrid from '../../components/PropertyGrid/PropertyGrid';
+import SearchFilters from '../../components/SearchFilters/SearchFilters';
+import { properties } from '../../data/properties';
+import './Rental.css';
 
-const Home = () => {
+const Rental = () => {
+  const [searchFilters, setSearchFilters] = useState({});
+  const rentalProperties = properties.alquiler;
+
+  const handleSearch = (filters) => {
+    setSearchFilters(filters);
+  };
+
   return (
-    <div className="home">
-      <Hero />
-      <PropertyGrid />
-      <About />
-    </div>
+    <section id="rental" className="rental-page section">
+      <div className="container">
+        <h2 className="section-title">Propiedades en Alquiler</h2>
+        <p className="section-subtitle">
+          Encuentra tu próximo hogar en alquiler en Río Cuarto y la región
+        </p>
+        
+        <SearchFilters onSearch={handleSearch} propertyType="alquiler" />
+        <PropertyGrid properties={rentalProperties} searchFilters={searchFilters} />
+      </div>
+    </section>
   );
 };
 
-export default Home;
+export default Rental;

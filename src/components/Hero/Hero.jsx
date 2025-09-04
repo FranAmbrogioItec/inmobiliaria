@@ -90,11 +90,7 @@ const Hero = ({ setCurrentPage, onSearch }) => {
       </div>
       
       <div className="container">
-        <div className="hero-content">
-          <div className="hero-badge fade-in-up">
-            <span>⭐ Más de 10 años de experiencia</span>
-          </div>
-          
+        <div className="hero-content">          
           <h1 className="hero-title fade-in-up">
             Encuentra tu <span className="text-accent">hogar ideal</span> en Río Cuarto
           </h1>

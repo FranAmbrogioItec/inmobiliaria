@@ -1,3 +1,4 @@
+// About.jsx
 import React from 'react';
 import './About.css';
 
@@ -26,51 +27,71 @@ const About = () => {
   return (
     <section id="about" className="about-page section">
       <div className="container">
-        <h2 className="section-title">Sobre Nosotros</h2>
-        <p className="section-subtitle">
-          Conoce la historia y el equipo detrás de Echenique Soluciones Inmobiliarias
-        </p>
+        <div className="section-header">
+          <h2 className="section-title">Sobre Nosotros</h2>
+          <p className="section-subtitle">
+            Conoce la historia y el equipo detrás de Echenique Soluciones Inmobiliarias
+          </p>
+        </div>
         
         <div className="about-content">
           <div className="about-text">
-            <h3>Nuestra Historia</h3>
-            <p>
-              Echenique Soluciones Inmobiliarias nació en 2010 con la visión de transformar 
-              la experiencia de compra, venta y alquiler de propiedades en Río Cuarto. 
-              Fundada por Juan Echenique, un profesional con amplia experiencia en el sector, 
-              nuestra empresa se ha consolidado como referente en el mercado local.
-            </p>
-            <p>
-              A lo largo de más de una década, hemos ayudado a cientos de familias y 
-              profesionales a encontrar su hogar ideal o la inversión perfecta, siempre 
-              con el compromiso de ofrecer un servicio personalizado, transparente y de calidad.
-            </p>
+            <div className="about-section">
+              <h3>Nuestra Historia</h3>
+              <p>
+                Echenique Soluciones Inmobiliarias nació en 2010 con la visión de transformar 
+                la experiencia de compra, venta y alquiler de propiedades en Río Cuarto. 
+                Fundada por Juan Echenique, un profesional con amplia experiencia en el sector, 
+                nuestra empresa se ha consolidado como referente en el mercado local.
+              </p>
+              <p>
+                A lo largo de más de una década, hemos ayudado a cientos de familias y 
+                profesionales a encontrar su hogar ideal o la inversión perfecta, siempre 
+                con el compromiso de ofrecer un servicio personalizado, transparente y de calidad.
+              </p>
+            </div>
             
-            <h3>Nuestra Misión</h3>
-            <p>
-              Brindar soluciones inmobiliarias integrales que superen las expectativas 
-              de nuestros clientes, mediante un servicio personalizado, transparente y 
-              profesional, aprovechando nuestro conocimiento del mercado local y las 
-              últimas tecnologías disponibles.
-            </p>
+            <div className="about-section">
+              <h3>Nuestra Misión</h3>
+              <p>
+                Brindar soluciones inmobiliarias integrales que superen las expectativas 
+                de nuestros clientes, mediante un servicio personalizado, transparente y 
+                profesional, aprovechando nuestro conocimiento del mercado local y las 
+                últimas tecnologías disponibles.
+              </p>
+            </div>
             
-            <h3>Nuestros Valores</h3>
-            <div className="values-grid">
-              <div className="value-item">
-                <h4>🏅 Confianza</h4>
-                <p>Construimos relaciones basadas en la honestidad y transparencia.</p>
-              </div>
-              <div className="value-item">
-                <h4>⚡ Innovación</h4>
-                <p>Utilizamos las últimas tecnologías para mejorar tu experiencia.</p>
-              </div>
-              <div className="value-item">
-                <h4>🤝 Compromiso</h4>
-                <p>Nos dedicamos por completo a alcanzar tus objetivos inmobiliarios.</p>
-              </div>
-              <div className="value-item">
-                <h4>📈 Excelencia</h4>
-                <p>Buscamos siempre la máxima calidad en nuestro servicio.</p>
+            <div className="about-section">
+              <h3>Nuestros Valores</h3>
+              <div className="values-grid">
+                <div className="value-item">
+                  <div className="value-icon">🏅</div>
+                  <div className="value-content">
+                    <h4>Confianza</h4>
+                    <p>Construimos relaciones basadas en la honestidad y transparencia.</p>
+                  </div>
+                </div>
+                <div className="value-item">
+                  <div className="value-icon">⚡</div>
+                  <div className="value-content">
+                    <h4>Innovación</h4>
+                    <p>Utilizamos las últimas tecnologías para mejorar tu experiencia.</p>
+                  </div>
+                </div>
+                <div className="value-item">
+                  <div className="value-icon">🤝</div>
+                  <div className="value-content">
+                    <h4>Compromiso</h4>
+                    <p>Nos dedicamos por completo a alcanzar tus objetivos inmobiliarios.</p>
+                  </div>
+                </div>
+                <div className="value-item">
+                  <div className="value-icon">📈</div>
+                  <div className="value-content">
+                    <h4>Excelencia</h4>
+                    <p>Buscamos siempre la máxima calidad en nuestro servicio.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -85,10 +106,12 @@ const About = () => {
         </div>
         
         <div className="team-section">
-          <h3 className="team-title">Nuestro Equipo</h3>
-          <p className="team-subtitle">
-            Profesionales comprometidos con brindarte el mejor servicio
-          </p>
+          <div className="section-header">
+            <h3 className="team-title">Nuestro Equipo</h3>
+            <p className="team-subtitle">
+              Profesionales comprometidos con brindarte el mejor servicio
+            </p>
+          </div>
           
           <div className="team-grid">
             {team.map((member, index) => (

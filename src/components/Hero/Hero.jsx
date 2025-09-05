@@ -1,3 +1,4 @@
+// Hero.jsx
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Hero.css';
@@ -91,6 +92,10 @@ const Hero = ({ setCurrentPage, onSearch }) => {
       
       <div className="container">
         <div className="hero-content">          
+          <div className="hero-badge">
+            <span>Inmobiliaria de confianza en Río Cuarto</span>
+          </div>
+          
           <h1 className="hero-title fade-in-up">
             Encuentra tu <span className="text-accent">hogar ideal</span> en Río Cuarto
           </h1>
@@ -142,7 +147,7 @@ const Hero = ({ setCurrentPage, onSearch }) => {
                   </select>
                 </div>
 
-                <button type="submit" className="btn btn-accent search-btn">
+                <button type="submit" className="btn btn-primary search-btn">
                   <span className="btn-icon">🔍</span>
                   Buscar
                 </button>
@@ -159,7 +164,7 @@ const Hero = ({ setCurrentPage, onSearch }) => {
             </button>
             
             <button 
-              className="btn btn-accent btn-large"
+              className="btn btn-primary btn-large"
               onClick={scrollToContact}
             >
               <span className="btn-icon">📞</span>
@@ -167,6 +172,11 @@ const Hero = ({ setCurrentPage, onSearch }) => {
             </button>
           </div>
         </div>
+      </div>
+
+      <div className="scroll-indicator">
+        <span>Desplázate</span>
+        <div className="scroll-line"></div>
       </div>
     </section>
   );

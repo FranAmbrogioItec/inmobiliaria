@@ -1,16 +1,13 @@
+// SearchFilters.jsx
 import React, { useState } from 'react';
 import './SearchFilters.css';
 
 const SearchFilters = ({ onSearch, propertyType }) => {
   const [filters, setFilters] = useState({
+    operationType: '',
     propertyType: '',
-    location: '',
-    minPrice: '',
-    maxPrice: '',
     bedrooms: '',
-    bathrooms: '',
-    minArea: '',
-    maxArea: ''
+    location: ''
   });
 
   const handleInputChange = (e) => {
@@ -30,14 +27,10 @@ const SearchFilters = ({ onSearch, propertyType }) => {
 
   const handleReset = () => {
     setFilters({
+      operationType: '',
       propertyType: '',
-      location: '',
-      minPrice: '',
-      maxPrice: '',
       bedrooms: '',
-      bathrooms: '',
-      minArea: '',
-      maxArea: ''
+      location: ''
     });
     if (onSearch) {
       onSearch({});
@@ -46,121 +39,89 @@ const SearchFilters = ({ onSearch, propertyType }) => {
 
   return (
     <div className="search-filters-container">
-      <h3>Filtrar Propiedades</h3>
+      <div className="filters-header">
+        <h3>Encuentra tu propiedad ideal</h3>
+        <p>Filtra por tus preferencias principales</p>
+      </div>
+      
       <form onSubmit={handleSubmit} className="search-filters-form">
         <div className="filters-grid">
           <div className="filter-group">
-            <label>Tipo de Propiedad</label>
-            <select 
-              name="propertyType" 
-              value={filters.propertyType}
-              onChange={handleInputChange}
-            >
-              <option value="">Todos los tipos</option>
-              <option value="casa">Casa</option>
-              <option value="departamento">Departamento</option>
-              <option value="local">Local Comercial</option>
-              <option value="terreno">Terreno</option>
-            </select>
+            <div className="select-wrapper">
+              <select 
+                name="operationType" 
+                value={filters.operationType}
+                onChange={handleInputChange}
+                className="filter-select"
+              >
+                <option value="">Tipo de operación</option>
+                <option value="venta">Venta</option>
+                <option value="alquiler">Alquiler</option>
+                <option value="temporal">Alquiler Temporal</option>
+              </select>
+            </div>
           </div>
 
           <div className="filter-group">
-            <label>Ubicación</label>
-            <select 
-              name="location" 
-              value={filters.location}
-              onChange={handleInputChange}
-            >
-              <option value="">Todas las zonas</option>
-              <option value="centro">Centro</option>
-              <option value="norte">Norte</option>
-              <option value="sur">Sur</option>
-              <option value="este">Este</option>
-              <option value="oeste">Oeste</option>
-            </select>
+            <div className="select-wrapper">
+              <select 
+                name="propertyType" 
+                value={filters.propertyType}
+                onChange={handleInputChange}
+                className="filter-select"
+              >
+                <option value="">Tipo de propiedad</option>
+                <option value="casa">Casa</option>
+                <option value="departamento">Departamento</option>
+                <option value="local">Local Comercial</option>
+                <option value="terreno">Terreno</option>
+              </select>
+            </div>
           </div>
 
           <div className="filter-group">
-            <label>Dormitorios</label>
-            <select 
-              name="bedrooms" 
-              value={filters.bedrooms}
-              onChange={handleInputChange}
-            >
-              <option value="">Cualquier cantidad</option>
-              <option value="1">1 dormitorio</option>
-              <option value="2">2 dormitorios</option>
-              <option value="3">3 dormitorios</option>
-              <option value="4">4+ dormitorios</option>
-            </select>
+            <div className="select-wrapper">
+              <select 
+                name="bedrooms" 
+                value={filters.bedrooms}
+                onChange={handleInputChange}
+                className="filter-select"
+              >
+                <option value="">Dormitorios</option>
+                <option value="1">1 dormitorio</option>
+                <option value="2">2 dormitorios</option>
+                <option value="3">3 dormitorios</option>
+                <option value="4">4+ dormitorios</option>
+              </select>
+            </div>
           </div>
 
           <div className="filter-group">
-            <label>Baños</label>
-            <select 
-              name="bathrooms" 
-              value={filters.bathrooms}
-              onChange={handleInputChange}
-            >
-              <option value="">Cualquier cantidad</option>
-              <option value="1">1 baño</option>
-              <option value="2">2 baños</option>
-              <option value="3">3+ baños</option>
-            </select>
-          </div>
-
-          <div className="filter-group">
-            <label>Precio Mínimo</label>
-            <input
-              type="number"
-              name="minPrice"
-              placeholder="Mínimo"
-              value={filters.minPrice}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="filter-group">
-            <label>Precio Máximo</label>
-            <input
-              type="number"
-              name="maxPrice"
-              placeholder="Máximo"
-              value={filters.maxPrice}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="filter-group">
-            <label>Área Mínima (m²)</label>
-            <input
-              type="number"
-              name="minArea"
-              placeholder="Mínimo"
-              value={filters.minArea}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="filter-group">
-            <label>Área Máxima (m²)</label>
-            <input
-              type="number"
-              name="maxArea"
-              placeholder="Máximo"
-              value={filters.maxArea}
-              onChange={handleInputChange}
-            />
+            <div className="select-wrapper">
+              <select 
+                name="location" 
+                value={filters.location}
+                onChange={handleInputChange}
+                className="filter-select"
+              >
+                <option value="">Localidades</option>
+                <option value="centro">Centro</option>
+                <option value="norte">Norte</option>
+                <option value="sur">Sur</option>
+                <option value="este">Este</option>
+                <option value="oeste">Oeste</option>
+              </select>
+            </div>
           </div>
         </div>
 
         <div className="filter-buttons">
-          <button type="submit" className="btn btn-accent">
+          <button type="submit" className="btn btn-primary filter-btn">
             <span className="btn-icon">🔍</span>
-            Aplicar Filtros
+            Buscar propiedades
           </button>
-          <button type="button" className="btn btn-outline" onClick={handleReset}>
-            Limpiar Filtros
+          <button type="button" className="btn btn-outline filter-btn" onClick={handleReset}>
+            Limpiar filtros
           </button>
         </div>
       </form>

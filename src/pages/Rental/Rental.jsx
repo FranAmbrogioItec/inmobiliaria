@@ -1,3 +1,4 @@
+// Rental.jsx
 import React, { useState } from 'react';
 import PropertyGrid from '../../components/PropertyGrid/PropertyGrid';
 import SearchFilters from '../../components/SearchFilters/SearchFilters';
@@ -15,10 +16,12 @@ const Rental = () => {
   return (
     <section id="rental" className="rental-page section">
       <div className="container">
-        <h2 className="section-title">Propiedades en Alquiler</h2>
-        <p className="section-subtitle">
-          Encuentra tu próximo hogar en alquiler en Río Cuarto y la región
-        </p>
+        <div className="page-header">
+          <h2 className="section-title">Propiedades en Alquiler</h2>
+          <p className="section-subtitle">
+            Encuentra tu próximo hogar en alquiler en Río Cuarto y la región
+          </p>
+        </div>
         
         <SearchFilters onSearch={handleSearch} propertyType="alquiler" />
         <PropertyGrid properties={rentalProperties} searchFilters={searchFilters} />

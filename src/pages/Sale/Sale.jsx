@@ -1,3 +1,4 @@
+// Sale.jsx
 import React, { useState } from 'react';
 import PropertyGrid from '../../components/PropertyGrid/PropertyGrid';
 import SearchFilters from '../../components/SearchFilters/SearchFilters';
@@ -15,10 +16,12 @@ const Sale = () => {
   return (
     <section id="sale" className="sale-page section">
       <div className="container">
-        <h2 className="section-title">Propiedades en Venta</h2>
-        <p className="section-subtitle">
-          Encuentra la propiedad perfecta para ti en Río Cuarto y la región
-        </p>
+        <div className="page-header">
+          <h2 className="section-title">Propiedades en Venta</h2>
+          <p className="section-subtitle">
+            Encuentra la propiedad perfecta para ti en Río Cuarto y la región
+          </p>
+        </div>
         
         <SearchFilters onSearch={handleSearch} propertyType="venta" />
         <PropertyGrid properties={saleProperties} searchFilters={searchFilters} />

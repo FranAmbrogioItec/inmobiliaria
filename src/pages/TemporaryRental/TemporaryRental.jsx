@@ -1,5 +1,6 @@
+// TemporaryRental.jsx
 import React, { useState } from 'react';
-import PropertyGrid from '../../components/PropertyGrid/PropertyGrid'; // Esta ruta debe ser correcta
+import PropertyGrid from '../../components/PropertyGrid/PropertyGrid';
 import SearchFilters from '../../components/SearchFilters/SearchFilters';
 import { properties } from '../../data/properties';
 import './TemporaryRental.css';
@@ -15,10 +16,12 @@ const TemporaryRental = () => {
   return (
     <section id="temporal" className="temporal-page section">
       <div className="container">
-        <h2 className="section-title">Alquiler Temporario</h2>
-        <p className="section-subtitle">
-          Disfruta de estadías temporales en las mejores propiedades de Río Cuarto y la región
-        </p>
+        <div className="page-header">
+          <h2 className="section-title">Alquiler Temporario</h2>
+          <p className="section-subtitle">
+            Disfruta de estadías temporales en las mejores propiedades de Río Cuarto y la región
+          </p>
+        </div>
         
         <SearchFilters onSearch={handleSearch} propertyType="temporal" />
         <PropertyGrid properties={temporalProperties} searchFilters={searchFilters} />

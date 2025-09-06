@@ -13,7 +13,7 @@ export const properties = {
       description: "Hermosa casa moderna en el corazón de la ciudad, con amplios espacios y terminaciones de primera calidad. Cuenta con living comedor, cocina integrada, tres dormitorios (suite principal), dos baños completos, patio y cochera.",
       amenities: ["Cochera", "Patio", "Balcón", "Amoblada", "Jardín"],
       images: [
-        "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "https://plus.unsplash.com/premium_photo-1676321688612-4451a8721435?q=80&w=1107&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
       ]

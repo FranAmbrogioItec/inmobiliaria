@@ -54,10 +54,10 @@ const SearchFilters = ({ onSearch, propertyType }) => {
                 onChange={handleInputChange}
                 className="filter-select"
               >
-                <option value="">Tipo de operación</option>
+                <option value="">Operación</option>
                 <option value="venta">Venta</option>
                 <option value="alquiler">Alquiler</option>
-                <option value="temporal">Alquiler Temporal</option>
+                <option value="temporal">Temporal</option>
               </select>
             </div>
           </div>
@@ -70,10 +70,10 @@ const SearchFilters = ({ onSearch, propertyType }) => {
                 onChange={handleInputChange}
                 className="filter-select"
               >
-                <option value="">Tipo de propiedad</option>
+                <option value="">Tipo</option>
                 <option value="casa">Casa</option>
-                <option value="departamento">Departamento</option>
-                <option value="local">Local Comercial</option>
+                <option value="departamento">Depto</option>
+                <option value="local">Local</option>
                 <option value="terreno">Terreno</option>
               </select>
             </div>
@@ -88,10 +88,10 @@ const SearchFilters = ({ onSearch, propertyType }) => {
                 className="filter-select"
               >
                 <option value="">Dormitorios</option>
-                <option value="1">1 dormitorio</option>
-                <option value="2">2 dormitorios</option>
-                <option value="3">3 dormitorios</option>
-                <option value="4">4+ dormitorios</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
               </select>
             </div>
           </div>
@@ -104,7 +104,7 @@ const SearchFilters = ({ onSearch, propertyType }) => {
                 onChange={handleInputChange}
                 className="filter-select"
               >
-                <option value="">Localidades</option>
+                <option value="">Zona</option>
                 <option value="centro">Centro</option>
                 <option value="norte">Norte</option>
                 <option value="sur">Sur</option>
@@ -118,10 +118,10 @@ const SearchFilters = ({ onSearch, propertyType }) => {
         <div className="filter-buttons">
           <button type="submit" className="btn btn-primary filter-btn">
             <span className="btn-icon">🔍</span>
-            Buscar propiedades
+            Buscar
           </button>
           <button type="button" className="btn btn-outline filter-btn" onClick={handleReset}>
-            Limpiar filtros
+            Limpiar
           </button>
         </div>
       </form>
